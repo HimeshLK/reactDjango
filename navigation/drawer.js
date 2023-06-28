@@ -14,6 +14,7 @@ const Drawer = createDrawerNavigator();
 
 export const MyDrawer = () => {
   return (
+<<<<<<< HEAD
     <Drawer.Navigator
       drawerContent={(props) => {
         return (
@@ -63,6 +64,13 @@ export const MyDrawer = () => {
         }}
       />
       {/* <Drawer.Screen name="Event" component={EventDetailScreen} /> */}
+=======
+    <Drawer.Navigator screenOptions={{headerShown: false}}>
+      <Drawer.Screen name="HomeStack" component={HomeStack}options={{
+        title:'Home'
+      }} />
+      {/* {<Drawer.Screen name="Event" component={EventDetailScreen} />} */}
+>>>>>>> eacb2d134ce29b3639b6de64f2e54f3c9a3fde4a
     </Drawer.Navigator>
   );
 };

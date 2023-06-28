@@ -7,6 +7,7 @@ import { HeaderBackButton } from "@react-navigation/elements";
 const EventDetailScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
+<<<<<<< HEAD
   const { eventId, title, description } = route.params;
   //   const navigation = useNavigation();
   useLayoutEffect(() => {
@@ -20,6 +21,22 @@ const EventDetailScreen = () => {
       ),
     });
   }, []);
+=======
+  const { eventId, title, description } = route.params
+
+  useLayoutEffect(()=>{
+    navigation.setOptions({
+      headerTitle:"new Title",
+      headerLeft:()=>(
+        <HeaderBackButton
+          tintColor="white"
+          onPress={()=>navigation.goBack()}
+        />
+      )
+    })
+  }, [])
+  
+>>>>>>> eacb2d134ce29b3639b6de64f2e54f3c9a3fde4a
 
   return (
     <View style={styles.screen}>
