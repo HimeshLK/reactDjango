@@ -1,12 +1,26 @@
 import { View, Text, StyleSheet, Button } from "react-native";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import HomeScreen from "./home_screen";
+import { HeaderBackButton } from "@react-navigation/elements";
 
 const EventDetailScreen = () => {
   const route = useRoute();
-  const { eventId, title, description } = route.params;
-  //   const navigation = useNavigation();
+  const navigation = useNavigation();
+  const { eventId, title, description } = route.params
+
+  useLayoutEffect(()=>{
+    navigation.setOptions({
+      headerTitle:"new Title",
+      headerLeft:()=>(
+        <HeaderBackButton
+          tintColor="white"
+          onPress={()=>navigation.goBack()}
+        />
+      )
+    })
+  }, [])
+  
 
   return (
     <View style={styles.screen}>
