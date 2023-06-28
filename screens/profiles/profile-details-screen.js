@@ -1,17 +1,15 @@
 import { View, Text, StyleSheet, Button } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import HomeScreen from "./home_screen";
 import { HeaderBackButton } from "@react-navigation/elements";
 
-const EventDetailScreen = () => {
+const ProfileDetailScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
-  const { eventId, title, description } = route.params;
+  const { profilesId, title, description } = route.params;
   //   const navigation = useNavigation();
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "new title",
       headerLeft: () => (
         <HeaderBackButton
           tintColor="white"
@@ -24,7 +22,7 @@ const EventDetailScreen = () => {
   return (
     <View style={styles.screen}>
       <Text style={{ fontSize: 30 }}>
-        This is the EventDetail screen for {eventId}
+        This is the Profile Detail screen for {profileId}
       </Text>
       <Text style={{ fontSize: 30 }}>{title}</Text>
       <Text style={{ fontSize: 30 }}>{description}</Text>
@@ -36,4 +34,4 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 });
-export default EventDetailScreen;
+export default ProfileDetailScreen;
